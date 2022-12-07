@@ -1,2 +1,0 @@
-# dvc
-All about DVC
