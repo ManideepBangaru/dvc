@@ -1,0 +1,12 @@
+md5: 9397f84e6f753385202e1f50463cbc2d
+frozen: true
+deps:
+- path: use-cases/cats-dogs
+  repo:
+    url: https://github.com/iterative/dataset-registry
+    rev_lock: 0322ba9160ea636be1025ea4bf5187de0a83f56b
+outs:
+- md5: 22e3f61e52c0ba45334d973244efc155.dir
+  size: 64128504
+  nfiles: 2800
+  path: cats-dogs
