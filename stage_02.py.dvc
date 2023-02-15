@@ -1,0 +1,4 @@
+outs:
+- md5: 884bb82fc2ab719f90fd3d5e1ff456be
+  size: 262
+  path: stage_02.py
