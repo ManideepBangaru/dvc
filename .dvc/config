@@ -1,0 +1,4 @@
+[core]
+    remote = ml_use_case_data_folder
+['remote "ml_use_case_data_folder"']
+    url = gdrive://1YJdbcbZNvVq8hNDLmyw0BEe-wC4hY_Rh
