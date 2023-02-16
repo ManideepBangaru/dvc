@@ -1,4 +1,0 @@
-[core]
-    remote = dvc_prac1_gdrive
-['remote "dvc_prac1_gdrive"']
-    url = gdrive://1OM1TxAhO5_4XRflil6fCKsG5NW91LaTZ
