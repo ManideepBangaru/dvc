@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.3
+Summary: A small package for testing dvc with ML
+Home-page: https://github.com/ManideepBangaru/dvc
+Author: Manideep Bangaru
+Author-email: bmd994@gmail.com
+License: GNU
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+UNKNOWN
+
