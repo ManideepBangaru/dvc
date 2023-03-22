@@ -106,3 +106,6 @@ voluptuous==0.13.1
 wcwidth==0.2.5
 yarl==1.8.2
 zc.lockfile==2.0
+
+# local packages -
+-e .
