@@ -8,7 +8,6 @@ def get_data(config_path):
     # Read dataset 
     remote_data_path = config['data_source']
     df = pd.read_csv(remote_data_path, sep=";")
-    print(df.head())
 
     # create paths to directory
     artifacts_dir = config["artifacts"]["artifacts_dir"]
