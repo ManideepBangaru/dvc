@@ -13,3 +13,6 @@ def create_directory(dirs : list):
     for dir_path in dirs:
         os.makedirs(dir_path, exist_ok=True)
         print(f"Path created at {dir_path}")
+
+def save_to_local(data, data_path, index_option = False):
+    data.to_csv(data_path, index = index_option)
