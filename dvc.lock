@@ -4,11 +4,11 @@ stages:
     cmd: python src/stage_01_load_save.py --config=config/config.yaml
     deps:
     - path: config/config.yaml
-      md5: 600b110d1f77f8be1e319872693dbc73
-      size: 298
+      md5: ac0f715b90c05cd01f754747768a5785
+      size: 361
     - path: src/stage_01_load_save.py
-      md5: 2025e683752b9b58c65890985bf62c9a
-      size: 1005
+      md5: 5295fbe6464062b81a0d72f56464b2cf
+      size: 984
     - path: src/utils/all_utils.py
       md5: 419c6da19ed34e9ca28b1db29c3dd24d
       size: 539
@@ -23,11 +23,14 @@ stages:
       md5: 7d814a1bda02145efe703f4e1c01847a
       size: 91999
     - path: config/config.yaml
-      md5: 600b110d1f77f8be1e319872693dbc73
-      size: 298
+      md5: ac0f715b90c05cd01f754747768a5785
+      size: 361
+    - path: params.yaml
+      md5: a111ed5cd3bfb056f8cebb25727d9fb0
+      size: 104
     - path: src/stage_02_train_test_split.py
-      md5: b4840c850a6786e672fa2e556b4ddcc1
-      size: 1750
+      md5: df1d7973aabf11c7378ea226bda57923
+      size: 1751
     - path: src/utils/all_utils.py
       md5: 419c6da19ed34e9ca28b1db29c3dd24d
       size: 539
@@ -42,3 +45,27 @@ stages:
     - path: artifacts/split_data_dir/train.csv
       md5: 54f7258ddb5a01b762407e767feda7d8
       size: 64455
+  training_model:
+    cmd: python src/stage_03_training.py --config=config/config.yaml --params=params.yaml
+    deps:
+    - path: artifacts/split_data_dir/train.csv
+      md5: 54f7258ddb5a01b762407e767feda7d8
+      size: 64455
+    - path: config/config.yaml
+      md5: ac0f715b90c05cd01f754747768a5785
+      size: 361
+    - path: src/stage_03_training.py
+      md5: dc2ade734a912e2be29270c9112e8755
+      size: 1681
+    - path: src/utils/all_utils.py
+      md5: 419c6da19ed34e9ca28b1db29c3dd24d
+      size: 539
+    params:
+      params.yaml:
+        base.random_state: 123
+        model_params.ElasticNet.alpha: 0.5
+        model_params.ElasticNet.l1_ratio: 0.5
+    outs:
+    - path: artifacts/model_dir/ElasticNet_v1.model
+      md5: 1ea9b7636c9206aaed6c8001dc153998
+      size: 1215
