@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import argparse
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 from src.utils.all_utils import read_yaml, create_directory, save_to_local
 import joblib
