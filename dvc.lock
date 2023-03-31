@@ -26,8 +26,8 @@ stages:
       md5: e2084096a2317780421d2c0d7800218b
       size: 409
     - path: params.yaml
-      md5: e46ab9ed9269b30139b3b7dbe95b4698
-      size: 104
+      md5: 83e2a453925d7eb8fa881b3088e9f8b4
+      size: 105
     - path: src/stage_02_train_test_split.py
       md5: df1d7973aabf11c7378ea226bda57923
       size: 1751
