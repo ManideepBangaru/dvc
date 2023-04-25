@@ -1,5 +1,5 @@
 base:
-  random_state: 123
+  random_state: 1234
   test_size: 0.3
 
 model_params:
