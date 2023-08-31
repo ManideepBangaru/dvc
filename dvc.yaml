@@ -1,6 +1,6 @@
 stages:
   load_data:
-    cmd: python3.9 src/stage_01_load_save.py --config=config/config.yaml
+    cmd: python3 src/stage_01_load_save.py --config=config/config.yaml
     deps:
       - src/stage_01_load_save.py
       - src/utils/all_utils.py
@@ -9,7 +9,7 @@ stages:
       - artifacts/raw_local_dir/data.csv
   
   split_data:
-    cmd: python3.9 src/stage_02_train_test_split.py --config=config/config.yaml --params=params.yaml
+    cmd: python3 src/stage_02_train_test_split.py --config=config/config.yaml --params=params.yaml
     deps:
       - src/stage_02_train_test_split.py
       - src/utils/all_utils.py
@@ -24,7 +24,7 @@ stages:
       - artifacts/split_data_dir/test.csv
   
   training_model:
-    cmd: python3.9 src/stage_03_training.py --config=config/config.yaml --params=params.yaml
+    cmd: python3 src/stage_03_training.py --config=config/config.yaml --params=params.yaml
     deps:
       - src/stage_03_training.py
       - src/utils/all_utils.py
@@ -38,7 +38,7 @@ stages:
       - artifacts/model_dir/ElasticNet_v1.model
   
   evaluating_model:
-    cmd: python3.9 src/stage_04_evaluation.py --config=config/config.yaml
+    cmd: python3 src/stage_04_evaluation.py --config=config/config.yaml
     deps:
       - src/stage_04_evaluation.py
       - src/utils/all_utils.py

@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   load_data:
-    cmd: python3.9 src/stage_01_load_save.py --config=config/config.yaml
+    cmd: python3 src/stage_01_load_save.py --config=config/config.yaml
     deps:
     - path: config/config.yaml
       md5: e2084096a2317780421d2c0d7800218b
@@ -17,7 +17,7 @@ stages:
       md5: 7d814a1bda02145efe703f4e1c01847a
       size: 91999
   split_data:
-    cmd: python3.9 src/stage_02_train_test_split.py --config=config/config.yaml --params=params.yaml
+    cmd: python3 src/stage_02_train_test_split.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: artifacts/raw_local_dir/data.csv
       md5: 7d814a1bda02145efe703f4e1c01847a
@@ -26,8 +26,9 @@ stages:
       md5: e2084096a2317780421d2c0d7800218b
       size: 409
     - path: params.yaml
-      md5: e46ab9ed9269b30139b3b7dbe95b4698
-      size: 104
+      hash: md5
+      md5: 83e2a453925d7eb8fa881b3088e9f8b4
+      size: 105
     - path: src/stage_02_train_test_split.py
       md5: df1d7973aabf11c7378ea226bda57923
       size: 1751
@@ -46,7 +47,7 @@ stages:
       md5: 54f7258ddb5a01b762407e767feda7d8
       size: 64455
   training_model:
-    cmd: python3.9 src/stage_03_training.py --config=config/config.yaml --params=params.yaml
+    cmd: python3 src/stage_03_training.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: artifacts/split_data_dir/train.csv
       md5: 54f7258ddb5a01b762407e767feda7d8
@@ -67,13 +68,15 @@ stages:
         model_params.ElasticNet.l1_ratio: 0.5
     outs:
     - path: artifacts/model_dir/ElasticNet_v1.model
-      md5: 41b155dff1c82deadcba26a73d3a785c
+      hash: md5
+      md5: 4f02d6c1cc060ea73a987b6afcaf1faa
       size: 1215
   evaluating_model:
-    cmd: python3.9 src/stage_04_evaluation.py --config=config/config.yaml
+    cmd: python3 src/stage_04_evaluation.py --config=config/config.yaml
     deps:
     - path: artifacts/model_dir/ElasticNet_v1.model
-      md5: 41b155dff1c82deadcba26a73d3a785c
+      hash: md5
+      md5: 4f02d6c1cc060ea73a987b6afcaf1faa
       size: 1215
     - path: artifacts/split_data_dir/test.csv
       md5: e3905d32a2c28106aa0c28de05f8efff
