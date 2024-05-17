@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 dvc_env
+dvcEnv
 /cats-dogs
